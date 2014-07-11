@@ -1,0 +1,25 @@
+{
+  "name": "AmIFunny",
+  "version": "0.0.0",
+  "homepage": "https://github.com/KamiQuasi/AmIFunny",
+  "authors": [
+    "Luke D <lukedary@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.19",
+    "angular-route": "~1.2.19",
+    "polymer": "Polymer/polymer#master",
+    "core-elements": "Polymer/core-elements#master",
+    "paper-elements": "Polymer/paper-elements#master"
+  }
+}
