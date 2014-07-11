@@ -1,11 +1,14 @@
 (function () {
     'use strict';
     
-    angular.module('AmIFunny', ['ngRoute'])
+    angular.module('AmIFunny', [
+        'ngRoute',
+        'login'
+    ])
         .config(['$routeProvider', function ($routeProvider) {
             $routeProvider
-                .when('/login', {
-                    templateUrl: 'components/login/login.html'
+                .otherwise('/', {
+                    redirectTo: '/'
                 });
         }]);
 }());
