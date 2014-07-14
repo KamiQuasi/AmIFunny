@@ -1,0 +1,19 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/core-animated-pages/core-animated-pages.html">
+<link rel="import" href="../../bower_components/core-animated-pages/transitions/slide-from-right.html">
+<link rel="import" href="../../components/aif-login/aif-login.html">
+
+<polymer-element name="aif-app" noscript>
+    <template>
+        <core-animated-pages id="pages" transitions="slide-from-right">
+            <section>
+                <aif-login></aif-login>
+            </section>
+            <section>
+                Page 2
+            </section>
+        </core-animated-pages>
+    </template>
+    
+    <script src="aif-app.js"></script>
+</polymer-element>

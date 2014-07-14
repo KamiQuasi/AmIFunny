@@ -1,0 +1,17 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+
+<polymer-element name="aif-login">
+    <template>
+        <form id="loginForm">
+            <paper-input label="Username" floatingLabel="true"></paper-input>
+            <paper-input type="password" label="Password" floatingLabel="true"></paper-input>
+            <div>
+                <paper-button label="Login" raisedButton="true" on-tap={{submit}}></paper-button>
+            </div>
+        </form>
+    </template>
+    
+    <script src="aif-login.js"></script>
+</polymer-element>
