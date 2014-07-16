@@ -8,3 +8,9 @@ body /deep/ .container {
     /*width: 80%;
     margin: auto;*/
 }
+
+body /deep/ paper-tabs,
+body /deep/ core-toolbar {
+    background-color: #3bbfc0;
+    color: white;
+}
