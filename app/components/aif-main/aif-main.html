@@ -4,11 +4,15 @@
 <link rel="import" href="../../bower_components/core-toolbar/core-toolbar.html">
 <link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../../bower_components/core-icons/core-icons.html">
+<link rel="import" href="../../bower_components/paper-tabs/paper-tabs.html">
+<link rel="import" href="../../bower_components/paper-tabs/paper-tab.html">
 <link rel="import" href="../aif-nav/aif-nav.html">
 <link rel="import" href="../aif-feed/aif-feed.html">
 
 <polymer-element name="aif-main">
     <template>
+        <link rel="stylesheet" href="aif-main.css">
+        
         <core-drawer-panel id="drawerPanel">
             <aif-nav drawer></aif-nav>
             
@@ -16,6 +20,12 @@
                 <core-toolbar>
                     <paper-icon-button id="navicon" icon="menu" on-tap="{{toggle}}"></paper-icon-button>
                     <div flex>Am I Funny?</div>
+                    
+                    <paper-tabs selected="0" class="bottom fit">
+                        <paper-tab>MOST COMMON</paper-tab>
+                        <paper-tab>MOST RECENT</paper-tab>
+                        <paper-tab>FRIENDS</paper-tab>
+                    </paper-tabs>
                 </core-toolbar>
                 <div>
                     <aif-feed></aif-feed>
