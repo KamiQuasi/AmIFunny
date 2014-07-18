@@ -7,8 +7,6 @@
             var that = this;
             
             this.$.loginForm.addEventListener('submit', function (event) {
-                event.preventDefault();
-                
                 that.fire('loggedIn');
             });
         },

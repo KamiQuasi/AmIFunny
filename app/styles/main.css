@@ -1,7 +1,22 @@
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/Montserrat-Regular.ttf') format("truetype");
+}
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/Montserrat-Bold.ttf') format("truetype");
+}
+
 html,
 body {
     height: 100%;
     margin: 0;
+    font-family: "Montserrat";
+    font-size: 14px;
 }
 
 body /deep/ .container {
@@ -12,5 +27,22 @@ body /deep/ .container {
 body /deep/ paper-tabs,
 body /deep/ core-toolbar {
     background-color: #3bbfc0;
+    font-family: "Montserrat";
     color: white;
+}
+
+body /deep/ core-toolbar {
+    font-weight: 700;
+}
+
+body /deep/ paper-tabs {
+    font-size: 11px;
+}
+
+body /deep/ paper-tab::shadow #ink {
+  color: #fdde62;
+}
+
+body /deep/ paper-tabs::shadow #selectionBar {
+  background-color: #fdde62;
 }

@@ -6,29 +6,61 @@
 <link rel="import" href="../../bower_components/core-icons/core-icons.html">
 <link rel="import" href="../../bower_components/paper-tabs/paper-tabs.html">
 <link rel="import" href="../../bower_components/paper-tabs/paper-tab.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../aif-nav/aif-nav.html">
 <link rel="import" href="../aif-feed/aif-feed.html">
 
 <polymer-element name="aif-main">
     <template>
         <link rel="stylesheet" href="aif-main.css">
+        <style>
+            paper-button {
+                fill: #004d4e;
+                background: #004d4e;
+                color: #fff;
+                text-transform: none;
+                font-size: 12px;
+            }
+            
+            .people {
+                padding: 16px;   
+            }
+            
+            .people > div {
+                margin-bottom: 16px;   
+            }
+            
+            .people > div > img {
+                background-color: #efefef;
+                margin-right: 16px;
+                -webkit-clip-path: circle(50% at 50% 50%);
+                -webkit-clip-path: circle(50%, 50%, 50%);
+            }
+        </style>
         
         <core-drawer-panel id="drawerPanel">
             <aif-nav drawer></aif-nav>
             
             <core-header-panel main>
-                <core-toolbar>
+                <core-toolbar class="toolbar">
                     <paper-icon-button id="navicon" icon="menu" on-tap="{{toggle}}"></paper-icon-button>
-                    <div flex>Am I Funny?</div>
+                    <div flex>amifunny?</div>
                     
                     <paper-tabs selected="0" class="bottom fit">
+                        <paper-tab>RECENT</paper-tab>
                         <paper-tab>MOST COMMON</paper-tab>
-                        <paper-tab>MOST RECENT</paper-tab>
                         <paper-tab>FRIENDS</paper-tab>
                     </paper-tabs>
                 </core-toolbar>
-                <div>
-                    <aif-feed></aif-feed>
+                <div class="people">
+                    <template repeat="{{ user in users }}">
+                        <div horizontal layout center>
+                            <img src="http://placehold.it/40x40" width="40" height="40">
+                            <div flex>{{ user }}</div>
+                            <paper-button label="Rate" on-tap="{{rate}}"></paper-button>
+                        </div>
+                    </template>
+                    <!--<aif-feed></aif-feed>-->
                 </div>
             </core-header-panel>
         </core-drawer-panel>
