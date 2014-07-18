@@ -5,21 +5,44 @@
     Polymer('aif-app', {
         ready: function () {
             this.addEventListener('loggedIn', function (event) {
-                this.$.pages.selected = 1;
+                this.$.pages.selected = 'main';
+                history.pushState({
+                    page: 'main'
+                });
             });
             
-            var dummyState = {
-                app: 'aif'
-            };
+            /*
+             * list for transition events. each event should pass
+             * a page object with a page name
+             */
+            this.addEventListener('transition', function (event) {
+                history.pushState({
+                    page: event.detail.page
+                });
+                
+                this.$.pages.selected = 'rate';
+            });
             
             if (!history.state) {
-                history.pushState(dummyState, '');
+                history.pushState({
+                    page: 'main'
+                });
             }
             
             window.onpopstate = function () {
-                console.log('in here');
+                /*
+                 * check to see if there is a page to go back to,
+                 * if there is, go to it
+                 */
+                if (history.state) {
+                    this.$.pages.selected = history.state.page;
+                    return;
+                }
                 
-                history.pushState(dummyState, '');
+                /*
+                 * no page to go back to, use the normal back method
+                 */
+                history.back();
             }.bind(this);
         }
     });

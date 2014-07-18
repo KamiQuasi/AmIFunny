@@ -16,6 +16,7 @@ body {
     height: 100%;
     margin: 0;
     font-family: "Montserrat";
+    font-size: 14px;
 }
 
 body /deep/ .container {
@@ -36,4 +37,12 @@ body /deep/ core-toolbar {
 
 body /deep/ paper-tabs {
     font-size: 11px;
+}
+
+body /deep/ paper-tab::shadow #ink {
+  color: #fdde62;
+}
+
+body /deep/ paper-tabs::shadow #selectionBar {
+  background-color: #fdde62;
 }
