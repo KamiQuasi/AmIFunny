@@ -22,10 +22,6 @@
                 font-size: 12px;
             }
             
-            .people {
-                padding: 16px;   
-            }
-            
             .people > div {
                 margin-bottom: 16px;   
             }
@@ -52,7 +48,8 @@
                         <paper-tab>FRIENDS</paper-tab>
                     </paper-tabs>
                 </core-toolbar>
-                <div class="people">
+                
+                <div class="container people">
                     <template repeat="{{ user in users }}">
                         <div horizontal layout center>
                             <img src="http://placehold.it/40x40" width="40" height="40">
@@ -60,7 +57,6 @@
                             <paper-button label="Rate" on-tap="{{rate}}"></paper-button>
                         </div>
                     </template>
-                    <!--<aif-feed></aif-feed>-->
                 </div>
             </core-header-panel>
         </core-drawer-panel>
