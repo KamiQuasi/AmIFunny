@@ -2,6 +2,7 @@
 <link rel="import" href="../../bower_components/core-header-panel/core-header-panel.html">
 <link rel="import" href="../../bower_components/core-toolbar/core-toolbar.html">
 <link rel="import" href="../../bower_components/core-item/core-item.html">
+<link rel="import" href="../../bower_components/core-icons/core-icons.html">
 
 <polymer-element name="aif-nav" noscript>
     <template>
@@ -12,8 +13,8 @@
                 <span>Menu</span>
             </core-toolbar>
             <core-menu>
-                <core-item label="One"></core-item>
-                <core-item label="Two"></core-item>
+                <core-item icon="home" label="Home" on-tap="{{navigate}}"></core-item>
+                <core-item icon="account-circle" label="Profile" on-tap="{{navigate}}"></core-item>
             </core-menu>
         </core-header-panel>
     </template>

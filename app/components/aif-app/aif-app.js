@@ -20,7 +20,12 @@
                     page: event.detail.page
                 });
                 
-                this.$.pages.selected = 'rate';
+                if (event.detail.page === 'rate') {
+                    this.$.rate.starting = 0;
+                    this.$.rate.rating = 0;
+                }
+                
+                this.$.pages.selected = event.detail.page;
             });
             
             if (!history.state) {
@@ -29,7 +34,7 @@
                 });
             }
             
-            window.onpopstate = function () {
+            window.onpopstate = function (event) {
                 /*
                  * check to see if there is a page to go back to,
                  * if there is, go to it
