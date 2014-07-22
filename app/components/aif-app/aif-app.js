@@ -28,11 +28,11 @@
                 this.$.pages.selected = event.detail.page;
             });
             
-            /*if (!history.state) {
+            if (!history.state) {
                 history.pushState({
-                    page: 'login'
+                    page: 'main'
                 });
-            }*/
+            }
             
             window.onpopstate = function (event) {
                 /*
