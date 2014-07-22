@@ -1,0 +1,63 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/core-header-panel/core-header-panel.html">
+<link rel="import" href="../../bower_components/core-toolbar/core-toolbar.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../bower_components/paper-slider/paper-slider.html">
+<link rel="import" href="../../bower_components/core-overlay/core-overlay.html">
+<link rel="import" href="../../bower_components/core-transition/core-transition-css.html">
+<link rel="import" href="../aif-back-button/aif-back-button.html">
+
+<polymer-element name="aif-rate">
+    <template>
+        <style>
+            h1 {
+                text-align: center;
+            }
+            
+            paper-slider {
+                width: 100%;   
+            }
+            
+            .action-buttons {
+                position: absolute;
+                bottom: 0;
+                left: 16px;
+                right: 16px;
+            }
+        </style>
+        
+        <core-header-panel fit>
+            <core-toolbar>
+                <aif-back-button></aif-back-button>
+                <div flex>Rate</div>
+            </core-toolbar>
+            
+            <div class="container">
+                <p>Someone just made a joke.</p>
+                <p>How funny was it?</p>
+                
+                <h1>{{rating}}</h1>
+                <paper-slider snaps max="5" step="0.5" value="{{starting}}" immediateValue="{{rating}}"></paper-slider>
+                
+                <div class="action-buttons" horizontal layout>
+                    <paper-button label="Cancel" flex on-tap="{{cancel}}"></paper-button>
+                    <paper-button label="Submit" flex on-tap="{{submit}}"></paper-button>
+                </div>
+            </div>
+        </core-header-panel>
+        
+        <core-overlay id="overlay" layered backdrop>
+            <style no-shim>
+                #overlay {
+                    background: white;
+                    padding: 16px;
+                }
+            </style>
+            
+            <p>Saving...</p>
+            <p>You gave a rating of {{rating}}</p>
+        </core-overlay>
+    </template>
+    
+    <script src="aif-rate.js"></script>
+</polymer-element>
