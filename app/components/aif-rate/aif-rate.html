@@ -10,8 +10,10 @@
 <polymer-element name="aif-rate">
     <template>
         <style>
-            h1 {
+            .rating {
                 text-align: center;
+                font-size: 50px;
+                font-weight: normal;
             }
             
             paper-slider {
@@ -36,7 +38,7 @@
                 <p>Someone just made a joke.</p>
                 <p>How funny was it?</p>
                 
-                <h1>{{rating}}</h1>
+                <h1 class="rating">{{rating}}</h1>
                 <paper-slider snaps max="5" step="0.5" value="{{starting}}" immediateValue="{{rating}}"></paper-slider>
                 
                 <div class="action-buttons" horizontal layout>
