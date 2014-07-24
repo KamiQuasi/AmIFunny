@@ -1,0 +1,43 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/core-header-panel/core-header-panel.html">
+<link rel="import" href="../../bower_components/core-toolbar/core-toolbar.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../bower_components/paper-slider/paper-slider.html">
+<link rel="import" href="../../bower_components/core-overlay/core-overlay.html">
+<link rel="import" href="../../bower_components/core-transition/core-transition-css.html">
+<link rel="import" href="../aif-back-button/aif-back-button.html">
+
+<polymer-element name="aif-profile">
+    <template>
+        <style>
+            h1 {
+                text-align: center;
+            }
+            
+            paper-slider {
+                width: 100%;   
+            }
+            
+            .action-buttons {
+                position: absolute;
+                bottom: 0;
+                left: 16px;
+                right: 16px;
+            }
+        </style>
+        
+        <core-header-panel fit>
+            <core-toolbar>
+                <aif-back-button></aif-back-button>
+                <div flex>Profile</div>
+            </core-toolbar>
+            
+            <div class="container">
+                Profile
+            </div>
+        </core-header-panel>
+        
+    </template>
+    
+    <script src="aif-profile.js"></script>
+</polymer-element>
