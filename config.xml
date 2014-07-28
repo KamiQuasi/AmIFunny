@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.wheelhouseapps.amifunny" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Am I Funny?</name>
+    <description>
+        Am I funny or not?
+    </description>
+    <author email="kylebuch8@gmail.com" href="http://cordova.io">
+        Kyle Buchanan
+    </author>
+    <content src="app/index.html" />
+    <access origin="*" />
+    <preference name="Orientation" value="portrait" />
+    <preference name="DisallowOverscroll" value="true"/>
+</widget>

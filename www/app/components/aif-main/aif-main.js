@@ -24,6 +24,18 @@
             this.fire('transition', {
                 page: 'rate'
             });
+        },
+        
+        domReady: function () {
+            var lgProfileImages = this.$.panel.querySelectorAll('.profile-img-lg'),
+                i = 0,
+                length = lgProfileImages.length,
+                maxHeight  = lgProfileImages[0].parentElement.offsetHeight;
+            
+            for (i; i < length; i += 1) {
+                lgProfileImages[i].style.maxWidth = maxHeight + 'px';
+                lgProfileImages[i].style.maxHeight = maxHeight + 'px';
+            }
         }
     });
 }());
