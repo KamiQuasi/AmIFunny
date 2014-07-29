@@ -30,7 +30,7 @@
             
             if (!history.state) {
                 history.pushState({
-                    page: 'main'
+                    page: 'login'
                 });
             }
             
