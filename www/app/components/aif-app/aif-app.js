@@ -28,13 +28,29 @@
                 this.$.pages.selected = event.detail.page;
             });
             
-            if (!history.state) {
+            /*if (!history.state) {
+                history.pushState({
+                    page: 'login'
+                });
+            }*/
+            
+            if (localStorage.getItem('access_token')) {
+                this.$.pages.selected = 'main';
                 history.pushState({
                     page: 'main'
+                });
+            } else {
+                history.pushState({
+                    page: 'login'
                 });
             }
             
             window.onpopstate = function (event) {
+                if (this.$.pages.selected === 'main') {
+                    navigator.app.exitApp();
+                    return;
+                }
+                
                 /*
                  * check to see if there is a page to go back to,
                  * if there is, go to it

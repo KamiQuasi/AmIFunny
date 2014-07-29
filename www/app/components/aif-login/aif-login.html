@@ -1,18 +1,29 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
-<link rel="import" href="../../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../../bower_components/core-ajax/core-ajax.html">
 <link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../bower_components/core-icons/core-icons.html">
 
 <polymer-element name="aif-login">
     <template>
         <link rel="stylesheet" href="aif-login.css">
         
-        <form id="loginForm">
-            <paper-input label="Username" floatingLabel="true"></paper-input>
-            <paper-input type="password" label="Password" floatingLabel="true"></paper-input>
-            <div>
-                <paper-button label="Login" raisedButton="true" on-tap={{submit}}></paper-button>
-            </div>
-        </form>
+        <div layout vertical>
+            <h1>Am I Funny?</h1> 
+            <paper-button class="btn-google" label="Sign in with Google" icon="google-plus" raisedButton="true" on-tap="{{login}}"></paper-button>
+        </div>
+        <core-ajax 
+            id="googleAccess" 
+            url="https://accounts.google.com/o/oauth2/token" 
+            method="POST" 
+            handleAs="json"
+            body='code={{code}}&client_id=188827455381-17o4l2v2vtpgs4jou083tbqenlmbpnp0.apps.googleusercontent.com&client_secret=JdzMKhVU8lOa9eSOKc1xA6r8&redirect_uri=http://localhost&grant_type=authorization_code'
+            on-core-response="{{tokenHandler}}"></core-ajax>
+        
+        <core-ajax 
+            id="googleProfile" 
+            url="https://www.googleapis.com/plus/v1/people/me?access_token={{access_token}}" 
+            handleAs="json"
+            on-core-response="{{responseHandler}}"></core-ajax>
     </template>
     
     <script src="aif-login.js"></script>
