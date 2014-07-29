@@ -46,6 +46,11 @@
             }
             
             window.onpopstate = function (event) {
+                if (this.$.pages.selected === 'main') {
+                    navigator.app.exitApp();
+                    return;
+                }
+                
                 /*
                  * check to see if there is a page to go back to,
                  * if there is, go to it
