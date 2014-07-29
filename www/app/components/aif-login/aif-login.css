@@ -1,3 +1,8 @@
 :host {
     background-color: #3bbfc0;
 }
+
+h1 {
+    color: white;
+    text-align: center;
+}
