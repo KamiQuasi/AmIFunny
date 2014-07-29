@@ -6,3 +6,8 @@ h1 {
     color: white;
     text-align: center;
 }
+
+.btn-google {
+    background: #dd4b39;
+    color: #fff;
+}
