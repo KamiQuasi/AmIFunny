@@ -36,6 +36,12 @@
         
         tokenHandler: function (event) {
             this.access_token = event.detail.response.access_token;
+            
+            /*
+             * save the access token to local storage
+             */
+            localStorage.setItem('access_token', this.access_token);
+            
             this.$.googleProfile.go();
         },
         
