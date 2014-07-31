@@ -26,6 +26,12 @@
             });
         },
         
+        profile: function() {
+            this.fire('transition', {
+                page: 'profile'
+            });
+        },
+        
         domReady: function () {
             var lgProfileImages = this.$.panel.querySelectorAll('.profile-img-lg'),
                 i = 0,

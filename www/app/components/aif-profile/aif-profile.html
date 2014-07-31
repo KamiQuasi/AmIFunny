@@ -6,26 +6,11 @@
 <link rel="import" href="../../bower_components/core-overlay/core-overlay.html">
 <link rel="import" href="../../bower_components/core-transition/core-transition-css.html">
 <link rel="import" href="../aif-back-button/aif-back-button.html">
+<link rel="import" href="aif-profile-image.html">
+<link rel="import" href="aif-profile-history.html">
 
 <polymer-element name="aif-profile">
     <template>
-        <style>
-            h1 {
-                text-align: center;
-            }
-            
-            paper-slider {
-                width: 100%;   
-            }
-            
-            .action-buttons {
-                position: absolute;
-                bottom: 0;
-                left: 16px;
-                right: 16px;
-            }
-        </style>
-        
         <core-header-panel fit>
             <core-toolbar>
                 <aif-back-button></aif-back-button>
@@ -33,7 +18,8 @@
             </core-toolbar>
             
             <div class="container">
-                Profile
+                <aif-profile-image></aif-profile-image>
+                <aif-profile-history></aif-profile-history>
             </div>
         </core-header-panel>
         

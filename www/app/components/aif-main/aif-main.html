@@ -108,8 +108,8 @@
                 <div class="container">
                     <template repeat="{{ user in users }}">
                         <div horizontal layout center>
-                            <img src="http://placehold.it/40x40" width="40" height="40">
-                            <div flex>{{ user }}</div>
+                            <img src="http://placehold.it/40x40" width="40" height="40" on-tap="{{profile}}">
+                            <div flex on-tap="{{profile}}">{{ user }}</div>
                             <paper-button label="Rate" on-tap="{{rate}}"></paper-button>
                         </div>
                     </template>

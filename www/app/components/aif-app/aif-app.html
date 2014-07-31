@@ -4,6 +4,7 @@
 <link rel="import" href="../../components/aif-login/aif-login.html">
 <link rel="import" href="../../components/aif-main/aif-main.html">
 <link rel="import" href="../../components/aif-rate/aif-rate.html">
+<link rel="import" href="../../components/aif-profile/aif-profile.html">
 
 <polymer-element name="aif-app">
     <template>
@@ -21,6 +22,11 @@
             <section name="rate">
                 <div>
                     <aif-rate id="rate" attributes="starting rating"></aif-rate>
+                </div>
+            </section>
+            <section name="profile">
+                <div>
+                    <aif-profile id="profile"></aif-profile>
                 </div>
             </section>
         </core-animated-pages>
